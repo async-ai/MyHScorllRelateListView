@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="@dimen/activity_meeting_times_titelWidth"
+        android:layout_height="@dimen/activity_meeting_times_titelHeight"
+        android:id="@+id/tv_meetingName"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:background="@color/colorPrimaryDark"
+        android:text="aaa"
+        android:textColor="@android:color/white"/>
+
+</LinearLayout>

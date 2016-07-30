@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    >
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <!--标题右-->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/activity_meeting_times_titelHeight"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_meetingType"
+                    android:layout_width="@dimen/activity_meeting_times_titelWidth"
+                    android:layout_height="@dimen/activity_meeting_times_titelHeight"
+                    android:layout_alignParentLeft="true"
+                    android:background="@null"
+                    android:gravity="center"
+                    android:text="123"
+                    android:textSize="16sp"
+                    />
+
+
+                <com.demo.jiangyuehua.myhscorllrelatelistview.view.AsyncHorizontalScrollView
+                    android:id="@+id/shs_titel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/btn_meetingType"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:id="@+id/ll_rightitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/activity_meeting_times_titelHeight"
+                        android:orientation="horizontal">
+
+                    </LinearLayout>
+
+                </com.demo.jiangyuehua.myhscorllrelatelistview.view.AsyncHorizontalScrollView>
+
+
+            </RelativeLayout>
+
+
+            <!--实际滑动的是它 ScrollView-->
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="300dip"
+                android:orientation="vertical">
+
+                <com.demo.jiangyuehua.myhscorllrelatelistview.view.AsyncScrollView
+                    android:id="@+id/inner_scrollView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        >
+
+                        <!--<ListView-->
+                        <!--android:id="@+id/lv_left_name"-->
+                        <!--android:layout_width="@dimen/activity_meeting_times_titelWidth"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:background="@color/colorAccent"/>-->
+
+                        <!--<com.demo.jiangyuehua.myhscorllrelatelistview.view.SyncHorizontalScrollView-->
+                        <!--android:id="@+id/shs_rightcontent"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--&gt;-->
+
+                        <!--<FrameLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent">-->
+
+                        <!--<ListView-->
+                        <!--android:id="@+id/lv_rightcontent"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--/>-->
+
+                        <!--<View-->
+                        <!--android:id="@+id/view_timeBar"-->
+                        <!--android:layout_width="@dimen/activity_meeting_times_titelWidth"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:background="#5000ff00"/>-->
+
+                        <!--</FrameLayout>-->
+                        <!--</com.demo.jiangyuehua.myhscorllrelatelistview.view.SyncHorizontalScrollView>-->
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="100dp"
+                            android:background="@color/colorPrimaryDark"
+                            android:text="123"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1000dp"
+                            android:text="123"/>
+
+
+                    </LinearLayout>
+
+
+                </com.demo.jiangyuehua.myhscorllrelatelistview.view.AsyncScrollView>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1000dp"
+                android:text="123"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
+
+
