@@ -4,5 +4,6 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="activity_meeting_times_titelWidth">60dp</dimen>
     <dimen name="activity_meeting_times_titelHeight">40dp</dimen>
-    <dimen name="activity_meeting_times_textSize">12sp</dimen>
+    <dimen name="activity_meeting_times_titelWidth2">100dp</dimen>
+    <dimen name="activity_meeting_times_textSize">10sp</dimen>
 </resources>

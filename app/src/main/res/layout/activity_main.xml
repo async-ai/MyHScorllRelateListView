@@ -17,10 +17,13 @@
             android:orientation="vertical">
             <!--标题右-->
 
-            <Button
+            <TextView
+                android:id="@+id/tv_time"
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
-                android:text="12222222"/>
+                android:gravity="center"
+                android:text="12222222"
+                android:textSize="20dp"/>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -44,13 +47,31 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/btn_meetingType"
-                    android:scrollbars="none">
+                    android:scrollbars="none"
+                    >
 
                     <LinearLayout
-                        android:id="@+id/ll_rightitle"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/activity_meeting_times_titelHeight"
                         android:orientation="horizontal">
+
+                        <!--过小的时间范围 固定中间不可移动-->
+                        <View
+                            android:layout_width="120dp"
+                            android:layout_height="match_parent"
+                            />
+
+                        <LinearLayout
+                            android:id="@+id/ll_rightitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/activity_meeting_times_titelHeight"
+                            android:orientation="horizontal">
+
+                        </LinearLayout>
+                            <View
+                                android:layout_width="120dp"
+                                android:layout_height="match_parent"
+                                />
 
                     </LinearLayout>
 
@@ -60,74 +81,105 @@
             </RelativeLayout>
 
 
-    <!--实际滑动的是它 -->
-            <com.demo.jiangyuehua.myhscorllrelatelistview.view.AsyncScrollView
-                android:id="@+id/innerScrollView_content"
+            <!--用farmeLayout 浮起来-->
+
+            <FrameLayout
+                android:id="@+id/fl_moveView"
                 android:layout_width="match_parent"
-                android:layout_height="400dp"
-                >
+                android:layout_height="match_parent">
 
 
-                <LinearLayout
+                <!--实际滑动的是它 -->
+                <com.demo.jiangyuehua.myhscorllrelatelistview.view.AsyncScrollView
+                    android:id="@+id/innerScrollView_content"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
+                    android:layout_height="300dp"
+                    android:scrollbars="none"
                     >
 
 
                     <LinearLayout
-                        android:layout_width="@dimen/activity_meeting_times_titelWidth"
-                        android:layout_height="wrap_content"
-                        android:focusable="true"
-                        android:focusableInTouchMode="true">
-                    <ListView
-                        android:id="@+id/lv_left_name"
-                        android:layout_width="@dimen/activity_meeting_times_titelWidth"
-                        android:layout_height="match_parent"
-                        android:background="@color/colorAccent"/>
-                    </LinearLayout>
-
-                    <com.demo.jiangyuehua.myhscorllrelatelistview.view.AsyncHorizontalScrollView
-                        android:id="@+id/shs_rightcontent"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                                android:focusableInTouchMode="true"
-                                android:focusable="true"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
                         >
 
-                        <FrameLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
 
-                            <!--dividerHeight自测高度时，设置相应的dividerHeight -->
+                        <LinearLayout
+                            android:layout_width="@dimen/activity_meeting_times_titelWidth"
+                            android:layout_height="wrap_content"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true">
+
                             <ListView
-                                android:id="@+id/lv_rightcontent"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:dividerHeight="0px"
-                                />
-
-                            <View
-                                android:id="@+id/view_timeBar"
+                                android:id="@+id/lv_left_name"
                                 android:layout_width="@dimen/activity_meeting_times_titelWidth"
                                 android:layout_height="match_parent"
-                                android:focusableInTouchMode="false"
-                                android:focusable="false"
-                                android:background="#5000ff00"/>
+                                android:background="@color/colorAccent"/>
+                        </LinearLayout>
 
-                        </FrameLayout>
-                    </com.demo.jiangyuehua.myhscorllrelatelistview.view.AsyncHorizontalScrollView>
+                        <com.demo.jiangyuehua.myhscorllrelatelistview.view.AsyncHorizontalScrollView
+                            android:id="@+id/shs_rightcontent"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:scrollbars="none"
+                            >
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <View
+                                    android:layout_width="120dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_alignParentLeft="true"/>
+
+                                <!--dividerHeight自测高度时，设置相应的dividerHeight -->
+                                <ListView
+                                    android:id="@+id/lv_rightcontent"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_toRightOf="@+id/v_left"
+                                    android:dividerHeight="0px"
+                                    />
+
+                                <View
+                                    android:layout_width="120dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_alignParentLeft="true"/>
 
 
-                </LinearLayout>
+                            </LinearLayout>
+                        </com.demo.jiangyuehua.myhscorllrelatelistview.view.AsyncHorizontalScrollView>
 
 
-            </com.demo.jiangyuehua.myhscorllrelatelistview.view.AsyncScrollView>
+                    </LinearLayout>
+
+
+                </com.demo.jiangyuehua.myhscorllrelatelistview.view.AsyncScrollView>
+
+
+                <com.demo.jiangyuehua.myhscorllrelatelistview.view.MoveView
+                    android:id="@+id/view_timeBar"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/activity_meeting_times_titelWidth"
+                    android:background="#5000ff00"
+
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"/>
+
+            </FrameLayout>
+
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="123"
-                android:layout_marginTop="1000dp"/>
+                android:layout_marginTop="1000dp"
+                android:text="123"/>
 
         </LinearLayout>
 

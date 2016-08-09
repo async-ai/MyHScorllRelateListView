@@ -145,7 +145,6 @@
         android:id="@+id/tv_16"
         android:layout_width="@dimen/activity_meeting_times_titelWidth"
         android:layout_height="@dimen/activity_meeting_times_titelHeight"
-        android:background="@drawable/shape_line"
         android:gravity="center"
         android:text="张三三"
         android:textColor="@android:color/background_dark"

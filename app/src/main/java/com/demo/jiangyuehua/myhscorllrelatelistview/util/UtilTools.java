@@ -1,5 +1,6 @@
 package com.demo.jiangyuehua.myhscorllrelatelistview.util;
 
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListAdapter;
@@ -28,6 +29,12 @@ public class UtilTools {
 		params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
 		params.width=totalWidth;//还是算出宽度，解决多出白边的问题
 		listView.setLayoutParams(params);
+
+	Log.v(listView.getAdapter().getItem(0).toString()+"计算后的宽、高：",params.height+"--"+params.width);
+
+
 	}
+
+
 
 }

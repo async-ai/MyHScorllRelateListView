@@ -53,6 +53,7 @@ public class AsyncScrollView extends ScrollView {
 		lastScrollDelta = delatY;
 		overScrollBy(0, delatY, 0, getScrollY(), 0, getScrollRange(), 0, 0, true);
 	}
+
 	private int getScrollRange() {
 		int scrollRange = 0;
 		if (getChildCount() > 0) {
@@ -88,7 +89,7 @@ public class AsyncScrollView extends ScrollView {
 //					Log.v("onInterceptTouchEventMoveBtn",btn_meetingType.getLocationOnScreen(ints));
 				isTimeItemShow=btn_meetingType.getLocalVisibleRect(new Rect(0,0,dm.widthPixels,dm.heightPixels));
 
-				Log.v("onInterceptTouchEventMove","把滚动事件恢复给父Scrollview:"+isTimeItemShow);
+//				Log.v("onInterceptTouchEventMove","把滚动事件恢复给父Scrollview:"+isTimeItemShow);
 
 
 			}

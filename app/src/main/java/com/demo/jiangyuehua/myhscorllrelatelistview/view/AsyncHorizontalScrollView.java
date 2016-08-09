@@ -12,6 +12,10 @@ public class AsyncHorizontalScrollView extends HorizontalScrollView {
 
 	private View mView;
 
+	private int scrollChangedX;
+
+	private OnScrollChangedListener onScrollChangedListener;
+
 	public AsyncHorizontalScrollView(Context context) {
 		super(context);
 	}
@@ -31,10 +35,33 @@ public class AsyncHorizontalScrollView extends HorizontalScrollView {
 		if (mView!=null)
 		mView.scrollTo(l,t);
 //		Log.v("滑动值：",l+"===="+t);
+		scrollChangedX=l;
+
+		if (onScrollChangedListener!=null){
+			onScrollChangedListener.onScrollChangedListener(l,t);
+		}
 	}
 
 	public void setmView(View mViwe) {
 		this.mView = mViwe;
 	}
 
+
+
+//	内部类接口
+
+	public  interface OnScrollChangedListener{
+
+		void onScrollChangedListener(int l,int t);
+
+	}
+
+	public void setOnScrollChangedListener(OnScrollChangedListener onScrollChangedListener){
+		this.onScrollChangedListener=onScrollChangedListener;
+	}
+
+
+	public int getScrollChangedX() {
+		return scrollChangedX;
+	}
 }

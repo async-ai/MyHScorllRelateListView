@@ -49,33 +49,60 @@ public class MainComposeActivity extends AppCompatActivity {
 		meetingType.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				meetingView.setTimeBarParams(barMinuteTransCurrWidth(100), 0x6000ff00);
-				meetingView.setTimeBarTranslationX(getBarTranslationX("15:00"));
+//				meetingView.setTimeBarParams(barMinuteTransCurrWidth(100), 0x6000ff00);
+//				meetingView.setTimeBarTranslationX(getBarTranslationX("10:00"));
+
+
+//				设置时间bar 居中 （屏宽-名称宽度）/2-barWidth/2
+
+				int width=0,heigth=0;
+
+				DisplayMetrics dm=getResources().getDisplayMetrics();
+				width=dm.widthPixels;
+				heigth=dm.heightPixels;
+
+//				int locationX= ((width-(int)getResources().getDimension(R.dimen.activity_meeting_times_titelWidth))/2
+//						-(int)(getResources().getDimension(R.dimen.activity_meeting_times_titelWidth2)/2));
+//				meetingView.getView_timeBar().setTranslationX(locationX);
+//
+//				Toast.makeText(context,width+"--"+locationX,Toast.LENGTH_LONG).show();
+
+
 			}
 		});
+
+//		new Thread(new Runnable() {
+//			@Override
+//			public void run() {
+//				Log.v("TimeBar：位置",meetingView.getTimeBarLocationX()+"--"+meetingView.getTimeBarLocationY());
+//
+//			}
+//		}).start();
+
 
 
 
 
 	}
 
-	/**得到指定时间点的相应位置 100分钟 单为为60dp*/
+	/**得到指定时间点的相应位置 100分钟 单为为60dp   反向转换就可得到时间（位置得到时间）*/
 	public int getBarTranslationX(String currentTime){
 		int location=0;
 // 以默认宽度为一个单位
 		int unit= (int) getResources().getDimension(R.dimen.activity_meeting_times_titelWidth);
-		Log.v("分钟60转换后","==="+unit);
+		Log.v("分钟60转换后","==="+unit);//60->90
 
 		String[] times=meetingView.getTimes();
 		int length=times.length;
 		int index=0;
 		for (int i=0; i<length;i++){
-			if (currentTime.equals(times[i])){
+			if (currentTime.equals(times[i])){//时间名称(只适用于整点)来判断
 				index=i;
 			}
 		}
 
 		location=(index*unit);
+		Log.v("分钟的位置","==="+location);//13：00---> 720
 		return location;
 	}
 

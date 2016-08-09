@@ -14,7 +14,7 @@ public class AsyncMeetingTextView extends TextView{
 
 	Paint linePaint=null;
 	int width,height;
-	int scale=6;//10分钟为一个单位
+	int scale=12;//10分钟为一个单位  5分钟为一单位
 	int lineWidth=1;
 	public AsyncMeetingTextView(Context context) {
 		this(context,null);
